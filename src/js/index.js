@@ -1,8 +1,11 @@
-import Vue from "vue";
+import Vue from 'vue';
 
-new Vue = ({
-    el    : '#app',
-    data: {
-        newColor: "hoge"
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    new Vue({
+        el    : '#app',
+        data: {
+            newColor: "",
+            colorNum: 0
+        }
+    });
 });

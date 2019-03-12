@@ -3,18 +3,33 @@
   <head>
     <meta charset="UTF-8"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <style>
+      .color {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
   </head>
   <body>
     <div id="app">     
         <div>
           #<input v-model="newColor" type="text" placeholder="000000">
         </div>
-        <div class="color" v-if="newColor != ''">
-          <span>{{newColor}}</span>
+        <div class="color" v-if="newColor != ''" :style="{background: '#' + newColor}">
         </div>
-        <input type="number" placeholder="0" >
+        <input v-model="colorNum" type="number" placeholder="0" >
         <button type="button">Create</button>
+
+        <div class="result">
+          <div v-for="n in colorNum">
+            <div class="color" :style="{background}">
+              
+            </div>
+          </div>
+        </div>
     </div>
+
     <script defer src="./js/bundle.js"></script>
   </body>
 </html>

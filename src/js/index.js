@@ -1,7 +1,8 @@
-import Vue from 'vue';
-import App from './components/App.vue';
+import Vue from "vue";
 
-new Vue({
+new Vue = ({
     el    : '#app',
-    render: h => h(App),
+    data: {
+        newColor: "hoge"
+    }
 });

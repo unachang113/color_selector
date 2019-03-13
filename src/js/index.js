@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             newColor: "",
             colorNum: 0
+        },
+        computed: {
+            // 色相環の作成
+            
         }
     });
 });

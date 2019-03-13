@@ -150,7 +150,7 @@ eval("function _typeof(obj) { if (typeof Symbol === \"function\" && typeof Symbo
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: {\n      newColor: \"\",\n      colorNum: 0\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: '#app',\n    data: {\n      newColor: \"\",\n      colorNum: 0\n    },\n    computed: {// 色相環の作成\n    }\n  });\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 

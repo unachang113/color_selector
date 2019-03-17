@@ -14,19 +14,13 @@
   <body>
     <div id="app">     
         <div>
-          #<input v-model="newColor" type="text" placeholder="000000">
+          #<input v-model="baseColor" type="text" placeholder="000000">
         </div>
-        <div class="color" v-if="newColor != ''" :style="{background: '#' + newColor}">
-        </div>
-        <input v-model="colorNum" type="number" placeholder="0" >
-        <button type="button">Create</button>
 
         <div class="result">
-          <div v-for="n in colorNum">
-            <div class="color" :style="{background: '#' + (n)}">
-              
-            </div>
-          </div>
+          <div class="color" v-if="baseColor != ''" :style="{background: '#' + baseColor}"></div>
+          <div class="color" v-if="complementaryColor != ''" :style="{background: '#' + complementaryColor}"></div>
+          <div class="rgb">#{{ complementaryColor }}</div>
         </div>
     </div>
 

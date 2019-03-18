@@ -5,8 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el    : '#app',
         data: {
-            baseColor: '',
-            colorNum: 0
+            baseColor: ''
         },
         computed: {
             // 色相環の作成

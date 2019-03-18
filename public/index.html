@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Complementary Color Checker</title>
     <meta charset="UTF-8"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   </head>
   <body>
     <div class="container">
-      <h1>Complementary Color</h1>
+      <h1>Complementary Color Checker</h1>
 
       <div id="app">
           <div class="baseColor">
             <span>#<input v-model="baseColor" type="text" placeholder="000000" class="baseColor-input"></span>
-            <div class="preview" v-if="baseColor != ''" :style="{background: '#' + baseColor}"></div>
+            <div class="preview" :style="{background: '#' + baseColor}"></div>
           </div>
     
-          <div class="resultColor">
+          <div class="resultColor" v-if="complementaryColor != ''">
             <div class="result-hex">#{{ complementaryColor }}</div>
-            <div class="preview" v-if="complementaryColor != ''" :style="{background: '#' + complementaryColor}"></div>
+            <div class="preview" :style="{background: '#' + complementaryColor}"></div>
           </div>
         </div>
     </div>

@@ -5,11 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el    : '#app',
         data: {
-            baseColor: ''
+            baseColor: '',
+            validColor: /^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
         },
         computed: {
-            // 色相環の作成
+            // 補色の作成
             complementaryColor: function() {
+                // hex値のバリデーション
+                if (this.validColor.test(this.baseColor) !== true) {
+                    return false;
+                }
+
                 const rgb = hexToRGB(this.baseColor);
                 // rgb値の最大値と最小値を求める
                 const buf = Math.min(rgb.r,rgb.g,rgb.b) + Math.max(rgb.r,rgb.g,rgb.b);

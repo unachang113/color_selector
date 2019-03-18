@@ -11,7 +11,7 @@
 
       <div id="app">
           <div class="baseColor">
-            <span>#<input v-model="baseColor" type="text" placeholder="000000" class="baseColor-input"></span>
+            <span>#<input v-model="baseColor" type="text" placeholder="000000" class="baseColor-input" maxlength="6"></span>
             <div class="preview" :style="{background: '#' + baseColor, border: '1px solid #' + baseColor}"></div>
           </div>
     

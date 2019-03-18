@@ -3,7 +3,7 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
-    "watch": "webpack -w"
+    "watch": "yarn dev & webpack -w"
   },
   "keywords": [],
   "author": "",

@@ -51,10 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
      * rgb形式(object)をhexに変換
      */
     function rgbToHex(color) {
-        const r = color.r.toString(16);
-        const g = color.g.toString(16);
-        const b = color.b.toString(16);
+        const r = zeroPadding(color.r.toString(16));
+        const g = zeroPadding(color.g.toString(16));
+        const b = zeroPadding(color.b.toString(16));
         return r + g + b;
+    };
+
+    /**
+     * @param num
+     * 0埋めをする
+     */
+    function zeroPadding(num) {
+        return ( '00' + num ).slice(-2);
     };
 
 });

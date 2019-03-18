@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import '../scss/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
     new Vue({

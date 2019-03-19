@@ -1,20 +1,30 @@
+const MODE = 'development';
 const { VueLoaderPlugin } = require('vue-loader');
 // output.pathに絶対パスを指定する必要があるため、pathモジュールを読み込んでおく
 const path = require('path');
+// ソースマップの利用有無(productionのときはソースマップを利用しない)
+const enabledSourceMap = (MODE === 'development');
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
-  mode: process.env.NODE_ENV || "development",
+  mode: MODE,
   // エントリーポイントの設定
   entry: './src/js/index.js',
   module: {
     rules: [
+      // Sassファイルの読み込みとコンパイル
       {
-        test: /\.css$/,
+        // 対象となるファイルの拡張子
+        test: /\.scss/,
+        exclude: /node_modules/,
         use: [
-          'vue-style-loader',
-          'css-loader'
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {url: false}
+          },
+          'sass-loader'
         ],
       },
       {

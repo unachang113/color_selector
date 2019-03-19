@@ -1,15 +1,18 @@
 import Vue from 'vue';
+import '../scss/style.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el    : '#app',
         data: {
             baseColor: '',
-            colorNum: 0
         },
         computed: {
-            // 色相環の作成
+            // 補色の作成
             complementaryColor: function() {
+                // hex値のバリデーション
+                if (!varidHexColor(this.baseColor)) return false;
+
                 const rgb = hexToRGB(this.baseColor);
                 // rgb値の最大値と最小値を求める
                 const buf = Math.min(rgb.r,rgb.g,rgb.b) + Math.max(rgb.r,rgb.g,rgb.b);
@@ -63,6 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function zeroPadding(num) {
         return ( '00' + num ).slice(-2);
+    };
+
+    /**
+     * @param color
+     * hex値のバリデート
+     */
+    function varidHexColor(color) {
+        return /^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color);
     };
 
 });

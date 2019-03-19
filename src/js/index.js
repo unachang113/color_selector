@@ -6,15 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
         el    : '#app',
         data: {
             baseColor: '',
-            validColor: /^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/
         },
         computed: {
             // 補色の作成
             complementaryColor: function() {
                 // hex値のバリデーション
-                if (this.validColor.test(this.baseColor) !== true) {
-                    return false;
-                }
+                if (!varidHexColor(this.baseColor)) return false;
 
                 const rgb = hexToRGB(this.baseColor);
                 // rgb値の最大値と最小値を求める
@@ -69,6 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function zeroPadding(num) {
         return ( '00' + num ).slice(-2);
+    };
+
+    /**
+     * @param color
+     * hex値のバリデート
+     */
+    function varidHexColor(color) {
+        return /^([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color);
     };
 
 });
